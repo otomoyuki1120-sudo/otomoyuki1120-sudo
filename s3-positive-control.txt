@@ -1,0 +1,2 @@
+# 陽性対照(レビュー体制 段階3 S3)。下の値は乱数で作った作り物で、どのサービスの鍵でもない。マージしない。
+service_api_key = "70pkbXwJLXcguWVqGzrBOPt0tZs01o9qtaDFfAs9"
