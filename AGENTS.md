@@ -6,6 +6,7 @@
 ## AI生成コードのレビュー・GitHub運用（レビュー体制 v0.1）
 
 - `main` / `master` へ直接pushしない。名前付きブランチで変更し、Pull Request経由で統合する。PRの作成・マージはClaude Code（司令塔）が担当する。Codexは差分を準備し、PR本文案に「何を・なぜ変えたか」「AIをどう使ったか」「新規依存の有無と確認結果」を記載する。
+- main を checkout した作業フォルダ(main の clone)で編集しない。名前付きブランチ用の別の作業フォルダ(git worktree など)で編集する。
 - 1 PR は数百行以内を目安とし、超える場合は目的ごとに分割する。PR本文にはCI結果とロールバック方法も記載する。
 - 新規依存は追加前に、(1)公式ドキュメント/公式リポジトリ、(2)公式レジストリでの実在、(3)更新頻度・保守状況、(4)名前のtypo/類似名を確認し、根拠をPR本文へ記録する。
 - ログインはSign in with Apple / Supabase Auth / Firebase Auth等を使い、パスワード保存・セッション管理を自前実装しない。課金はStoreKit 2（アプリ）/ Stripe Checkout等（Web）を使い、カード情報を自サーバーに通さない。データ権限はDB側の行レベルセキュリティ（RLS）を使い、アプリ側のif判定だけに頼らない。暗号・乱数はCryptoKit、SecRandomCopyBytes、crypto.randomUUID等のOS・言語標準を使い、独自実装・MD5/DES・Math.random等は禁止。シークレットは中継サーバー / OS内蔵機能を使い、クライアント埋め込み・ユーザー入力は禁止。

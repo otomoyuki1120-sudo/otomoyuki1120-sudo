@@ -1,0 +1,3 @@
+# Review owners for GitHub configuration.
+/.github/CODEOWNERS @otomoyuki1120-sudo
+/.github/workflows/ @otomoyuki1120-sudo
